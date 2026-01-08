@@ -45,9 +45,11 @@ app.get('/posts/:id', PostController.getOne);
 app.post('/posts', checkAuth, postCreateValidation, handleValitationErrors, PostController.create);
 app.delete('/posts/:id', checkAuth, PostController.remove);
 app.patch('/posts/:id', checkAuth, postCreateValidation, handleValitationErrors, PostController.update);
-app.listen(4444, (err) => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
 	if (err) {
 		return console.log(err);
 	}
-	console.log('ServerOk');
+	console.log('ServerOk:');
+	console.log(PORT);
 });
