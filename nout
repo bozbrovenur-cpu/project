@@ -1,0 +1,7 @@
+# указатели на функцию
+def function():
+    print("hello word")
+
+
+f = function
+f
