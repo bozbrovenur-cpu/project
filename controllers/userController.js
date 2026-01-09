@@ -33,11 +33,8 @@ export const register = async (req, res) => {
 		//Убираем passwordHash из общих данных
 		const { passwordHash, ...userData } = user._doc;
 
-		res.json({
-			...userData,
-			token,
+    res.redirect("http://lopa.zzz.com.ua/success.txt"); 
 
-		});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json({
