@@ -26,6 +26,8 @@ const upload = multer({ storage });
 
 //Нужно для правильного чтения json формата в коде
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/uploads', express.static('uploads'));
 
 app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
